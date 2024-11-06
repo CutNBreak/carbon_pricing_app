@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price List App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logo Header -->
+    <div class="logo-header">
+        <div class="container">
+            <div class="logo-container">
+                <svg class="carbon-logo" viewBox="0 0 50 50" width="40" height="40">
+                    <path d="M0 0 L25 0 L50 25 L25 50 L0 50 L25 25 Z" fill="#ff6600"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="carbon-text">CARBON</span>
+                    <span class="subtext">DIAMOND ABRASIVES</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand price-list-text" href="{{ url_for('main.index') }}">Price List</a>
+            <form class="d-flex" action="{{ url_for('main.search') }}" method="get">
+                <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search" name="q">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container mt-4 main-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer with Contact Information -->
+    <footer class="footer mt-auto py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>PERTH</h5>
+                    <p>P: <a href="tel:0862431778">08 6243 1778</a></p>
+                    <p>A: Unit 1/21 Delage Street, Joondalup, WA</p>
+                    <p>E: <a href="mailto:sales@carbondiamondabrasives.com.au">sales@carbondiamondabrasives.com.au</a></p>
+                    <p>W: <a href="http://carbondiamondabrasives.com.au">carbondiamondabrasives.com.au</a></p>
+                </div>
+                <div class="col-md-6">
+                    <h5>MELBOURNE</h5>
+                    <p>P: <a href="tel:0862431778">08 6243 1778</a></p>
+                    <p>A: 2/11 Friars Road, Moorabbin, VIC</p>
+                    <p>E: <a href="mailto:salesvic@carbonda.com.au">salesvic@carbonda.com.au</a></p>
+                    <p>W: <a href="http://carbondiamondabrasives.com.au">carbondiamondabrasives.com.au</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
