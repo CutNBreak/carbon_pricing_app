@@ -24,7 +24,7 @@ A web-based price list application for Carbon Diamond Abrasives, built with Flas
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/CutNBreak/carbon_pricing_app
 cd pricelist_app
 ```
 
